@@ -1,15 +1,18 @@
 <?php 
 require 'config/config.php';
-require 'includes\form_handler/register_handler.php';
-require 'includes\form_handler/login_handler.php';
+require 'includes/form_handler/register_handler.php';
+require 'includes/form_handler/login_handler.php';
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Welcome to Our site</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<!-- <link rel="stylesheet" type="text/css" href="assets/bootstrap/bootstrap.css"> -->
 </head>
 <body>
+  <div class="wrapper">
 	<!-- LOGIN FORM -->
 	<form action="register.php" method="POST">
 		<input type="email" name="log_email" placeholder="email">
@@ -92,6 +95,7 @@ require 'includes\form_handler/login_handler.php';
 		<br>
 		<input type="submit" name="register_button" value="register">
 	</form>
-     
+  </div>
+ 
 </body>
 </html>
