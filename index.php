@@ -1,4 +1,4 @@
 <?php  
 //require 'config/config.php';
-echo "hello";
+echo "hello sam";
 ?>
