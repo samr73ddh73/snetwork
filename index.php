@@ -2,7 +2,6 @@
 require 'includes/header.php';
 
 ?> 
-<div class="container">
 	<div class="row">
 	<div class="col-md-4 user_details column" style="background-color: white">
 		<div class="col-md-6">
@@ -49,7 +48,6 @@ require 'includes/header.php';
 		</form>
 	</div>
     </div>
-</div>
 
 </div>
 </body>
