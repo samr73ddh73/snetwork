@@ -4,7 +4,7 @@ require 'config/config.php';
 if(isset($_SESSION['username']))
 {
 	$userLoggedIn=$_SESSION['username'];
-	$userDetailsQuery = mysqli_query($con, "SELECT * FROM users WHERE username='$userLoggedIn'");
+	$userDetailsQuery = mysqli_query($con, "SELECT * FROM user WHERE username='$userLoggedIn'");
 	if (!$userDetailsQuery)
 	{
     	printf("Error: %s\n", mysqli_error($con));
@@ -32,6 +32,7 @@ else
 <body>
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
+    	<div class="container">
 	    	<div class="navbar-header">
 	             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 	                    <span class="sr-only">Toggle navigation</span>
@@ -85,9 +86,10 @@ else
 			  		</li>
 			    </ul>
                 </div>
+            </div>
 
 			
 	</nav>
 
 
-    <div class="wrapper">
+    <div class="container" style="margin-top: 5%;">
