@@ -1,5 +1,13 @@
 <?php
 require 'includes/header.php';
+require 'includes/classes/User.php';
+require 'includes/classes/Post.php';
+
+if (isset($_POST['post'])) {
+    $post = new Post($con, $userLoggedIn);
+    $post->submitPost($_POST['post_text'], 'none');
+}
+
 
 ?> 
 	<div class="row">
@@ -37,7 +45,8 @@ require 'includes/header.php';
 	<div class="col-md-7 column main-column" >
 		<form class="post_form" action="index.php" method="POST">
 			<div class="form-group">
-				<textarea name="post_text" id="post_text" placeholder="What's new?" class="form-control"></textarea>
+				<textarea name="post_text" id="post_text" 
+				class="form-control"></textarea>
 			</div>
 			<div class="form-group">
 				<input type="submit" name="post" value="post" 

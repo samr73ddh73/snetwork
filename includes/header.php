@@ -4,7 +4,7 @@ require 'config/config.php';
 if(isset($_SESSION['username']))
 {
 	$userLoggedIn=$_SESSION['username'];
-	$userDetailsQuery = mysqli_query($con, "SELECT * FROM users WHERE username='$userLoggedIn'");
+	$userDetailsQuery = mysqli_query($con, "SELECT * FROM user WHERE username='$userLoggedIn'");
 	if (!$userDetailsQuery)
 	{
     	printf("Error: %s\n", mysqli_error($con));
