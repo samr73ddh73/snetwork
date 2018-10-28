@@ -2,15 +2,6 @@
 {
 	font-size: 150%;
 }
-.wrapper
-{
-	margin: 0 auto;
-	top:50px;
-	position: relative;
-	padding: 2% 10px;
-	width: 75%;
-	min-width: 950px;
-}
 nav
 {
 	z-index: 10;
@@ -51,5 +42,5 @@ body
 .space
 {
 
-	min-height:100px;
+	min-height:50px;
 }

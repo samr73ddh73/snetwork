@@ -11,8 +11,8 @@ if(isset($_POST["log_button"]))
 		$row=mysqli_fetch_array($check_user_query);
 		$username=$row['username'];
         $_SESSION['username']=$username;
-        // header("Location: index.php");
-        require 'index.php';
+        header("Location: index.php");
+        // require 'index.php';
 
         exit();
 	}
