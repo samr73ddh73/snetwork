@@ -13,7 +13,7 @@ class User
     	printf("Error: %s\n", mysqli_error($con));
     	exit();
 	}
-		// $this->user=mysqli_fetch_array($userDetailsQuery); 
+		$this->user=mysqli_fetch_array($userDetailsQuery); 
 	}
 
 
@@ -24,8 +24,7 @@ class User
 	public function getFirstAndLastName()
 	{
 		$username=$this->user['username'];
-		$query=mysqli_query($this->con,"select first_name,last_name from user where 
-			username='$username");
+		$query=mysqli_query($this->con,"SELECT first_name,last_name from user where username='$username'");
 		$row=mysqli_fetch_array($query);
 		return $row['first_name']." ".$row['last_name'];
 	}
@@ -35,17 +34,6 @@ class User
         $query = mysqli_query($this->con, "SELECT num_posts FROM user WHERE username='$username'");
         $row = mysqli_fetch_array($query);
         return $row['num_posts'];
-    }
-	public function isClosed() {
-        $username = $this->user['username'];
-        $query = mysqli_query($this->con, "SELECT user_closed FROM user WHERE username='$username'");
-        $row = mysqli_fetch_array($query);
-        
-        if($row['user_closed'] == 'yes') {
-            return true;
-        } else {
-            return false;
-        }
     }
     
     public function isFriend($username_to_check) {
@@ -62,6 +50,17 @@ class User
         $query = mysqli_query($this->con, "SELECT profile_pic FROM user WHERE username='$username'");
         $row = mysqli_fetch_array($query);
         return $row['profile_pic'];
+    }
+
+    public function isClosed(){
+        $username = $this->user['username'];
+        $query = mysqli_query($this->con, "SELECT user_closed from user WHERE username='$username'");
+        $row = mysqli_fetch_array($query);
+
+        if($row['user_closed']=='yes')
+            return true;
+        else
+            return false;
     }
 }
 ?>
