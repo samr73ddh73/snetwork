@@ -10,7 +10,7 @@ if(isset($_SESSION['username']))
     	printf("Error: %s\n", mysqli_error($con));
     	exit();
 	}
-	$user = mysqli_fetch_array($userDetailsQuery);
+	$user = mysqli_fetch_array(mysqli_query($con, "SELECT * FROM user WHERE username='$userLoggedIn'"));
 }
 else
 {
@@ -92,4 +92,4 @@ else
 	</nav>
 
 
-    <div class="container" style="margin-top: 5%;">
+    

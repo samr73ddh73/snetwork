@@ -10,7 +10,7 @@ if (isset($_POST['post'])) {
 
 
 ?> 
-
+<div class="container" style="margin-top: 5%;">
 <div class="row">
 
 		    <div class="col-md-3 user_details column" style="background-color: white">
