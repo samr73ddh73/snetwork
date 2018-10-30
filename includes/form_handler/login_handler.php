@@ -1,8 +1,9 @@
+
 <?php
 if(isset($_POST["log_button"]))
 {
 	$email=filter_var($_POST['log_email'],FILTER_SANITIZE_EMAIL);
-	$password=($_POST['log_password']);
+	$password=sha1($_POST['log_password']);
 	$_SESSION['log_email']=$email;
 	$check_user_query=mysqli_query($con,"SELECT * FROM user WHERE email='$email' and password='$password'");
 	$num=mysqli_num_rows($check_user_query);
