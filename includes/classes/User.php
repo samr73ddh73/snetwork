@@ -38,11 +38,20 @@ class User
     
     public function isFriend($username_to_check) {
         $usernameComma = "," . $username_to_check . ",";
-        if (strstr($this->user['friend_array'], $usernameComma) || $username_to_check == $this->user['username']) {
+
+        if((strstr($this->user['friend_array'], $usernameComma) || $username_to_check == $this->user['username'])) {
             return true;
-        } else {
+        }
+        else {
             return false;
         }
+    }
+
+    public function getFriendArray() {
+        $username = $this->user['username'];
+        $query = mysqli_query($this->con, "SELECT friend_array FROM user WHERE username='$username'");
+        $row = mysqli_fetch_array($query);
+        return $row['friend_array'];
     }
     
     public function getProfilePic() {
@@ -63,9 +72,9 @@ class User
             return false;
     }
 
-    public function didRecieveRequest($user_to)
+    public function didRecieveRequest($user_from)
     {
-        $user_from = $this->user['username'];
+        $user_to = $this->user['username'];
         $check_request_query = mysqli_query($this->con, "SELECT * FROM friend_requests WHERE user_to = '$user_to' and user_from = '$user_from' ");
         if (mysqli_num_rows($check_request_query)>0) {
             return true;
@@ -75,9 +84,9 @@ class User
         }
     }
 
-    public function didSendRequest($user_from)
+    public function didSendRequest($user_to)
     {
-        $user_to = $this->user['username'];
+        $user_from = $this->user['username'];
         $check_request_query = mysqli_query($this->con, "SELECT * FROM friend_requests WHERE user_to = '$user_to' and user_from = '$user_from' ");
         if (mysqli_num_rows($check_request_query)>0) {
             return true;
@@ -104,6 +113,29 @@ class User
     public function sendRequest($user_to) {
         $user_from = $this->user['username'];
         $query = mysqli_query($this->con, "INSERT INTO friend_requests VALUES('', '$user_to', '$user_from')");
+    }
+
+    public function getMutualFriends($user_to_check) {
+        $mutualFriends = 0;
+        $user_array = $this->user['friend_array'];
+        $user_array_explode = explode(",", $user_array);
+
+        $query = mysqli_query($this->con, "SELECT friend_array FROM user  WHERE username='$user_to_check'");
+        $row = mysqli_fetch_array($query);
+        $user_to_check_array = $row['friend_array'];
+        $user_to_check_array_explode = explode(",", $user_to_check_array);
+
+        foreach($user_array_explode as $i) {
+
+            foreach($user_to_check_array_explode as $j) {
+
+                if($i == $j && $i != "") {
+                    $mutualFriends++;
+                }
+            }
+        }
+        return $mutualFriends;
+
     }
 }
 ?>

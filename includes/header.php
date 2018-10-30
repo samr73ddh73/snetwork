@@ -22,11 +22,17 @@ else
 	<title>Welcome to S-network</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<script type="text/javascript" src="assets/javascript/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="assets/javascript/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/javascript/bootstrap.min.js"></script> 
+	<script type="text/javascript" src="assets/javascript/bootbox.min.js"></script>
+	<script type="text/javascript" src="assets/javascript/jcrop_bits.js"></script>
+	<script type="text/javascript" src="assets/javascript/jquery.Jcrop.js"></script>
+	<script type="text/javascript" src="assets/javascript/snetwork.js"></script>
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/jquery.Jcrop.css">
 	<!-- <link rel="stylesheet" type="text/css" href="assets/bootstrap/bootstrap3.min.css"> -->
 	<!-- <link rel="stylesheet" type="text/css" href="assets/bootstrap/bootstrap4.min.css"> -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 	
 </head>
 <body>
@@ -74,7 +80,7 @@ else
 			  		</li>
 
 			  		<li>
-			  			<a href="#">   <span class="glyphicon 	glyphicon-user"></span></a>
+			  			<a href="requests.php">   <span class="glyphicon 	glyphicon-user"></span></a>
 			  		</li>
 
 			  		<li>

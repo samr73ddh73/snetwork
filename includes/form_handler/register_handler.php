@@ -72,7 +72,7 @@ if(isset($_POST["register_button"]))//if the button is pressed
     
     if(empty($error_array))
     {
-    	$password=sha1($password1);//encrypt password before sending to db
+    	$password=($password1);//encrypt password before sending to db
     	$check_name=mysqli_query($con,"SELECT first_name,last_name from user where first_name='$fname' and last_name='$lname'");
     	$num=mysqli_num_rows($check_name)+1;
     	$username=strtolower($fname."_".$lname."_".$num);
@@ -81,8 +81,8 @@ if(isset($_POST["register_button"]))//if the button is pressed
 
     //inserting values in table:
     	$query=mysqli_query($con,"INSERT INTO 
-    		user (user_id,first_name,last_name,username,email,password,signup_date,profile_pic,num_posts,num_likes,closed) 
-    		VALUES ('','$fname','$lname','$username','$email','$password','$date','$profile_pic','0','0','no')");
+    		user (user_id,first_name,last_name,username,email,password,signup_date,profile_pic,num_posts,num_likes,user_closed, friend_array) 
+    		VALUES ('','$fname','$lname','$username','$email','$password','$date','$profile_pic','0','0','no',',')");
     	//clear session:
         session_unset();
 

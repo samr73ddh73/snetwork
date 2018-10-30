@@ -167,3 +167,38 @@ body
     margin: 0 0 0 20px;
     word-wrap: break-word;
 }
+
+#accept_button {
+    width: 20%;
+    height: 28px;
+    border-radius: 5px;
+    margin: 5px;
+    border: none;
+    color: #fff;
+    background-color: #2ecc71;
+}
+#ignore_button {
+    width: 20%;
+    height: 28px;
+    border-radius: 5px;
+    margin: 5px;
+    border: none;
+    color: #fff;
+    background-color: #e74c3c;
+}
+.deep_blue {
+    background-color: #0043f0 !important;
+}
+.profile_info_bottom {
+    margin: 10px 0 0 20px;
+
+}
+.delete_button {
+    height: 22px;
+    width: 22px;
+    padding: 0;
+    float: right;
+    border-radius: 4px;
+    right: -15px;
+    position: relative;
+}

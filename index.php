@@ -1,4 +1,4 @@
-<?php
+  <?php
 require 'includes/header.php';
 require 'includes/classes/User.php';
 require 'includes/classes/Post.php';
