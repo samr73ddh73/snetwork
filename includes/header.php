@@ -47,10 +47,10 @@ else
 	                    <span class="icon-bar"></span>
 	            </button>
 	            <a href="index.php" class="navbar-brand"><span class="sonder">Sonder </span><span class="glyphicon glyphicon-star-empty"></a>
-	        </div>
-	        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-                  	<div class="search navbar-form navbar-left">
+
+	        </div>
+	        <div class="search navbar-form navbar-left">
                     	<form action="search.php" method="GET" name="search_form">
                     		<input type="text" class="form-control" placeholder="Search Friend" onkeyup="getLiveSearchUsers(this.value, '<?php echo $userLoggedIn; ?>')" name="q"  autocomplete="off" id="search_text_input">
 
@@ -68,11 +68,14 @@ else
 						</div>
                     	
                   	</div>
+
+	        
+	        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   
                   <ul class="nav navbar-nav navbar-right">
 
 			    	<li>
-			    		<a href="#">
+			    		<a href="<?php echo $userLoggedIn; ?>">
 			    			<?php
 			    				echo $user['first_name'];
 			    			?>
@@ -80,16 +83,16 @@ else
 			  		</li>
 
 			  		<li>
-			  			<a href="#"> <span class="glyphicon glyphicon-home"></a>
+			  			<a href="index.php"> <span class="glyphicon glyphicon-home"></a>
 			  		</li>
 
-			  		<li>
+			  		<!-- <li>
 			  			<a href="#"> <span class="glyphicon 	glyphicon-envelope"></span></a>
 			  		</li>
 
 			  		<li>
 			  			<a href="#">   <span class="glyphicon 	glyphicon-bell"></span></a>
-			  		</li>
+			  		</li> -->
 
 			  		<li>
 			  			<a href="requests.php">   <span class="glyphicon 	glyphicon-user"></span></a>

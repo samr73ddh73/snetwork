@@ -275,6 +275,10 @@ body
 #grey {
     color: #8C8C8C;
 }
+.searchPageFriendButtons {
+    margin-top: 2%;
+    float: right;
+}
 .search_results {
     background-color: #fff;
     border: 1px solid #DADADA;
@@ -323,6 +327,10 @@ body
 }
 .settings
 {
-        background-color: #9191c9;
-        padding: 12% 5%;
+        /*background-color: #9191c9;
+        padding: 12% 5%;*/
+}
+.result_profile_pic {
+    float: left;
+    margin-right: 10px;
 }

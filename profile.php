@@ -41,7 +41,7 @@ if (isset($_POST['respond_request'])) {
     }
 </style>
 
-<div class="profile_left">
+<div class="profile_left" <div style="margin-top: -2%;">
     <!-- <div style="margin-top: 5%;"></div> -->
     <img src="<?php echo $user_array['profile_pic']; ?>">
 
@@ -94,7 +94,7 @@ if (isset($_POST['respond_request'])) {
 
 </div>
 <!-- style="margin-left: 20%; margin-right: 5%; margin-top: 5%" -->
-<div class="main_column column"  style="margin-left: 20%; margin-right: 5%; margin-top: 4%"  >
+<div class="main_column column"  style="margin-left: 20%; margin-right: 5%; margin-top: 7% ; margin-bottom: 5%;"  >
     <hr>
     <div class="posts_area">
     </div>

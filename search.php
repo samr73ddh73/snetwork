@@ -1,6 +1,8 @@
 <?php
 
 include("includes/header.php");
+require 'includes/classes/User.php';
+require 'includes/classes/Post.php';
 
 if(isset($_GET['q'])) {
 	$query = $_GET['q'];
@@ -17,7 +19,7 @@ else {
 }
 ?>
 
-<div class="main_column column" id="main_column">
+<div class="main_column column container" id="main_column" style="margin-top: 7%; margin-bottom: 5%;">
 
 	<?php 
 	if($query == "")
@@ -64,13 +66,13 @@ else {
 
 				//Generate button depending on friendship status 
 				if($user_obj->isFriend($row['username']))
-					$button = "<input type='submit' name='" . $row['username'] . "' class='danger' value='Remove Friend'>";
-				else if($user_obj->didReceiveRequest($row['username']))
-					$button = "<input type='submit' name='" . $row['username'] . "' class='warning' value='Respond to request'>";
+					$button = "<input type='submit' name='" . $row['username'] . "' class='btn btn-danger' value='Remove Friend'>";
+				else if($user_obj->didRecieveRequest($row['username']))
+					$button = "<input type='submit' name='" . $row['username'] . "' class='btn btn-warning' value='Respond to request'>";
 				else if($user_obj->didSendRequest($row['username']))
 					$button = "<input type='submit' class='default' value='Request Sent'>";
 				else 
-					$button = "<input type='submit' name='" . $row['username'] . "' class='success' value='Add Friend'>";
+					$button = "<input type='submit' name='" . $row['username'] . "' class='btn btn-success' value='Add Friend'>";
 
 				$mutual_friends = $user_obj->getMutualFriends($row['username']) . " friends in common";
 

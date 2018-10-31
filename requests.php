@@ -4,7 +4,7 @@ require 'includes/classes/User.php';
 require 'includes/classes/Post.php';
 ?>
 
-<div class="main_column column" style="margin-left: 20%; margin-right: 5%; margin-top: 3%">
+<div class="main_column column container" style="margin-top: 7%; margin-bottom: 5%;">
 
 	<h4>Friend Requests</h4>
 
