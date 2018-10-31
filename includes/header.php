@@ -96,7 +96,7 @@ else
 			  		</li>
 
 			  		<li>
-			  			<a href="#">  <span class="glyphicon 	glyphicon-cog"></span></a>
+			  			<a href="settings.php">  <span class="glyphicon 	glyphicon-cog"></span></a>
 			  		</li>
 
 			  		<li>

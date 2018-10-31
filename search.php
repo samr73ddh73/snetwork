@@ -22,9 +22,8 @@ else {
 	<?php 
 	if($query == "")
 		echo "You must enter something in the search box.";
-	?>
-</div>
-	<!-- else {
+
+	else {
 
 
 
@@ -130,4 +129,4 @@ else {
 
 
 
-</div> -->
+</div> 
