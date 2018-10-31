@@ -180,7 +180,8 @@ class Post {
 				   <img src='$profile_pic' width='50'>
 			        </div>
                                 <div class='posted_by' style='color:#ACACAC;'>
-				   <a href='$added_by'> $first_name $last_name </a> $user_to &nbsp;&nbsp;&nbsp;&nbsp;$time_message$delete_button
+				   <a href='$added_by'> $first_name $last_name </a> $user_to &nbsp;&nbsp;&nbsp;&nbsp;$time_message 
+                   $delete_button
 				</div>
 				<div id='post_body'>
 				    $body
@@ -208,7 +209,7 @@ class Post {
                         $('#post<?php echo $id; ?>').on('click', function() {
                             bootbox.confirm("Are you sure you want to delete this post?", function(result) {
 
-                                $.post("includes/form_handlers/delete_post.php?post_id=<?php echo $id; ?>", {result:result});
+                                $.post("includes/form_handler/delete_post.php?post_id=<?php echo $id; ?>", {result:result});
 
                                 if(result)
                                     location.reload();
@@ -380,6 +381,7 @@ class Post {
 
                                 <div class='posted_by' style='color:#ACACAC;'>
                                     <a href='$added_by'> $first_name $last_name </a> &nbsp;&nbsp;&nbsp;&nbsp;$time_message
+
                                     $delete_button
                                 </div>
                                 <div id='post_body'>
@@ -408,7 +410,7 @@ class Post {
                         $('#post<?php echo $id; ?>').on('click', function() {
                             bootbox.confirm("Are you sure you want to delete this post?", function(result) {
 
-                                $.post("includes/form_handlers/delete_post.php?post_id=<?php echo $id; ?>", {result:result});
+                                $.post("includes/form_handler/delete_post.php?post_id=<?php echo $id; ?>", {result:result});
 
                                 if(result)
                                     location.reload();
