@@ -50,12 +50,24 @@ else
 	        </div>
 	        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-                  <form class="navbar-form navbar-left">
-                    <div class="form-group">
-                      <input type="text" class="form-control" placeholder="Search Friend">
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                  </form>
+                  	<div class="search navbar-form navbar-left">
+                    	<form action="search.php" method="GET" name="search_form">
+                    		<input type="text" class="form-control" placeholder="Search Friend" onkeyup="getLiveSearchUsers(this.value, '<?php echo $userLoggedIn; ?>')" name="q"  autocomplete="off" id="search_text_input">
+
+                    	    
+                      
+         
+	                   	 	<div class="button_holder">
+	                   	 		<img src="assets/images/icons/magnifying_glass.png">
+	                   	 	</div>
+	                   	</form>
+	                   	<div class="search_results">
+						</div>
+
+						<div class="search_results_footer_empty">
+						</div>
+                    	
+                  	</div>
                   
                   <ul class="nav navbar-nav navbar-right">
 
