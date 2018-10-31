@@ -72,7 +72,7 @@ if(isset($_POST["register_button"]))//if the button is pressed
     
     if(empty($error_array))
     {
-    	$password=($password1);//encrypt password before sending to db
+    	$password=sha1($password1);//encrypt password before sending to db
     	$check_name=mysqli_query($con,"SELECT first_name,last_name from user where first_name='$fname' and last_name='$lname'");
     	$num=mysqli_num_rows($check_name)+1;
     	$username=strtolower($fname."_".$lname."_".$num);
